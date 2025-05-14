@@ -21,7 +21,7 @@ services:
       - -c
       - |
         echo "Flask is reachable at:"
-        echo "  • http://localhost:5000"
-        echo "  • http://host.docker.internal:5000"
+        IP=$(ip route get 8.8.8.8 | awk '/src/ {print $7}')
+        echo "Reach Flask at: http://$IP:5000"
     # Run once and exit
     restart: "no"
