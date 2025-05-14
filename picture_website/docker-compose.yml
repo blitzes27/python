@@ -5,7 +5,7 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - "${FOLDER-PATH}:/images"
+      - "${FOLDER_PATH}:/images"
     command: ["/images"]
 
   ipcheck:
