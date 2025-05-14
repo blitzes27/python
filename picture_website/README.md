@@ -17,5 +17,6 @@ git sparse-checkout set picture_website && \
 cd picture_website && \
 echo "FOLDER_PATH=${HOME}/HDR" > .env && \
 docker compose up --build -d
-curl -fsSL "https://raw.githubusercontent.com/blitzes27/linux/main/Random_stuff/grep_internal_ip.sh" | bash
-echo "use the ip above and put the ending ':5000' at the end to connect"
+curl -fsSL "https://raw.githubusercontent.com/blitzes27/linux/main/Random_stuff/grep_internal_ip.sh" | bash | \
+awk -F': ' '{print "http://"$2":5000"}'
+echo "use the ip above to see page"
