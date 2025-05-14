@@ -5,5 +5,17 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - "${HOME}/HDR:/images"
+      - "${FOLDER-PATH}:/images"
     command: ["/images"]
+
+  ipcheck:
+    image: alpine:latest
+    # share the network with the web service
+    network_mode: service:web
+    # Only run when web is up
+    depends_on:
+      - web
+    # At start run ipcheck and exit
+    entrypoint: ["sh", "-c", "echo Flask is running on IP: $(hostname -i)"]
+    # Run once and exit
+    restart: "no"
