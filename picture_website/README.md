@@ -1,13 +1,17 @@
-#This creates a website based om pyflask#
+# This creates a website based om pyflask #
 
-The website takes an folderpath as an argument and displays all the pictures in that folder on the website for everyone on the network to see.
+The website takes an folder_path as an argument and displays all the pictures in that folder on the website for everyone on the network to see. Set your path in:
+
+## FOLDER_PATH=XXXXXX ##
 
 * Port = 5000
 * IP = same IP as host computer
+* It will display where the container can be reached in the terminal when it have built the website
+
 ```bash
 git clone --depth=1 --filter=blob:none --sparse https://github.com/blitzes27/python.git && \
 cd python && \
 git sparse-checkout set picture_website && \
 cd picture_website && \
-echo 'FOLDER-PATH="PUT-YOUR-PATH"' > .env && \
-docker compose up --build -d web ipcheck
+echo "FOLDER_PATH=${HOME}/HDR" > .env && \
+docker compose up --build -d && docker compose run --rm ipcheck-host

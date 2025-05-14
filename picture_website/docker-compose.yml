@@ -8,14 +8,19 @@ services:
       - "${FOLDER_PATH}:/images"
     command: ["/images"]
 
-  ipcheck:
+  ipcheck-host:
     image: alpine:latest
-    # share the network with the web service
-    network_mode: service:web
     # Only run when web is up
     depends_on:
       - web
+    # Use host network mode
+    network_mode: host
     # At start run ipcheck and exit
-    entrypoint: ["sh", "-c", "echo Flask is running on IP: $(hostname -i)"]
+    entrypoint:
+      - sh
+      - -c
+      - |
+        echo "Host LAN IP(s): $(hostname -I)" && \
+        echo "Reach Flask at: http://$(hostname -I | awk '{print $1}'):5000"
     # Run once and exit
     restart: "no"
