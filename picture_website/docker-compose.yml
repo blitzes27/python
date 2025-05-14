@@ -20,7 +20,8 @@ services:
       - sh
       - -c
       - |
-        echo "Host LAN IP(s): $(hostname -I)" && \
-        echo "Reach Flask at: http://$(hostname -I | awk '{print $1}'):5000"
+        echo "Flask is reachable at:"
+        echo "  • http://localhost:5000"
+        echo "  • http://host.docker.internal:5000"
     # Run once and exit
     restart: "no"
