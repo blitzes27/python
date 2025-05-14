@@ -7,21 +7,3 @@ services:
     volumes:
       - "${FOLDER_PATH}:/images"
     command: ["/images"]
-
-  ipcheck-host:
-    image: alpine:latest
-    # Only run when web is up
-    depends_on:
-      - web
-    # Use host network mode
-    network_mode: host
-    # At start run ipcheck and exit
-    entrypoint:
-      - sh
-      - -c
-      - |
-        echo "Flask is reachable at:"
-        IP=$(ip route get 8.8.8.8 | awk '/src/ {print $7}')
-        echo "Reach Flask at: http://$IP:5000"
-    # Run once and exit
-    restart: "no"
