@@ -1,0 +1,9 @@
+services:
+  web:
+    container_name: drunken-pictures
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - "${HOME}/HDR:/images"
+    command: ["/images"]
