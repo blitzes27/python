@@ -1,14 +1,17 @@
-# This creates a website based om pyflask #
+# This builds a Docker container from the repository and runs it to host a PyFlask-based website #
 
-The website takes an folder_path as an argument and displays all the pictures in that folder on the website for everyone on the network to see. Set your path in:
+The website accepts a folder path as an argument, displaying all pictures from the specified folder for everyone on your local network to access. Set your image folder path by modifying:
 
 ## FOLDER_PATH=XXXXXX ##
 
 * Port = 5000
 * IP = same IP as host computer
-* It will display where the container can be reached in the terminal when it have built the website
+* Once the container is built and running, the terminal will display the URL where the website can be reached.
 
-You need to have docker & compose installed on your system
+![alt text](pictures/picture2.png)
+![alt text](pictures/picture3.png)
+
+### You need to have docker & compose installed on your system
 
 ```bash
 git clone --depth=1 --filter=blob:none --sparse https://github.com/blitzes27/python.git && \
