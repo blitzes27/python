@@ -19,7 +19,7 @@ body {
 
 /* Team Mango-Owl logga som länk till index.html */
 #index1 {
-    font-size: 2rem; /* Text size */
+    font-size: 1rem; /* Text size */
     padding: 1rem; /* Adds some space inside the element */
     border-radius: 20px; /* Rounded corners */
     background-color: #666633; /* Background color */
