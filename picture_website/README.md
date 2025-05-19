@@ -13,6 +13,8 @@ The website accepts a folder path as an argument, displaying all pictures from t
 
 ### You need to have docker & compose installed on your system
 
+Run the website buy running script below. Dont forget to set your FOLDER_PATH variable
+
 ```bash
 git clone --depth=1 --filter=blob:none --sparse https://github.com/blitzes27/python.git && \
 cd python && \
