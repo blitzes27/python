@@ -1,9 +1,10 @@
 # This builds a Docker container from the repository and runs it to host a PyFlask-based website #
 
-The website accepts a folder path as an argument, displaying all pictures from the specified folder for everyone on your local network to access. Set your image folder path by modifying:
+The website accepts a folder path as an argument, displaying all pictures from the specified folder for everyone on your local network to access. Set your image folder path by modifying: 
 
-## FOLDER_PATH=XXXXXX ##
+### "FOLDER_PATH=XXXXXX"
 
+### Fixed values:
 * Port = 5000
 * IP = same IP as host computer
 * Once the container is built and running, the terminal will display the URL where the website can be reached.
